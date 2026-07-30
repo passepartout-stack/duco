@@ -28,7 +28,7 @@ jobs:
       - name: Alle 4 fetchers draaien
         run: python run_all.py
 
-     - name: Wijzigingen committen
+      - name: Wijzigingen committen
         run: |
           git config user.name "duco-bot"
           git config user.email "bot@users.noreply.github.com"
