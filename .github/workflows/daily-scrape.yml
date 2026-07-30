@@ -26,6 +26,8 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Alle 4 fetchers draaien
+        env:
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: python run_all.py
 
       - name: Wijzigingen committen
