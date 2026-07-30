@@ -9,7 +9,13 @@ from common import matched_keywords, passes_filter, make_item
 
 BASE = "https://news.belgium.be"
 LIST_URL = f"{BASE}/nl/ministerraad"
-HEADERS = {"User-Agent": "Mozilla/5.0 (RubenDucoTracker/1.0; +https://www.rubend.be)"}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
+    "Referer": "https://news.belgium.be/nl/ministerraad",
+}
 
 MONTHS_NL = {
     "januari": 1, "februari": 2, "maart": 3, "april": 4, "mei": 5, "juni": 6,
