@@ -1,0 +1,45 @@
+name: Dagelijkse ministerraad-check
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: Python installeren
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Dependencies installeren
+        run: pip install requests beautifulsoup4
+
+      - name: Alle 4 fetchers draaien
+        run: python run_all.py
+
+      - name: Wijzigingen committen
+        run: |
+          git config user.name "duco-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/items.json data/state.json
+          git diff --staged --quiet || git commit -m "Auto-update: dossier-data $(date -u +%F)"
+          git push
+
+      - name: Pages voorbereiden
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publiceren naar GitHub Pages
+        uses: actions/deploy-pages@v4
