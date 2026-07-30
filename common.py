@@ -3,6 +3,8 @@
 import json
 import os
 
+import requests
+
 KEYWORDS_FILE = "keywords.json"
 ITEMS_FILE = "data/items.json"
 STATE_FILE = "data/state.json"
@@ -13,6 +15,25 @@ SOURCE_LABELS = {
     "kamer": "Federaal parlement (Kamer)",
     "vlaams_parlement": "Vlaams Parlement",
 }
+
+SCRAPERAPI_KEY = os.environ.get("SCRAPERAPI_KEY", "").strip()
+
+
+def fetch_url(url, headers=None, timeout=30):
+    """Haalt een URL op. Gebruikt ScraperAPI als proxy als SCRAPERAPI_KEY is
+    ingesteld (GitHub secret) -- dat omzeilt IP-gebaseerde blokkering door de
+    doelsite. Zonder sleutel: gewoon een rechtstreeks verzoek, ongewijzigd
+    gedrag t.o.v. voorheen."""
+    if SCRAPERAPI_KEY:
+        r = requests.get(
+            "https://api.scraperapi.com",
+            params={"api_key": SCRAPERAPI_KEY, "url": url},
+            timeout=timeout * 2,
+        )
+    else:
+        r = requests.get(url, headers=headers, timeout=timeout)
+    r.raise_for_status()
+    return r
 
 
 def load_json(path, default):
