@@ -1,0 +1,44 @@
+<svg width="100%" viewBox="0 0 680 640" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Mascotte: een otter in maatpak</title>
+<desc>Een schattige otter gekleed in een donkerblauw maatpak met rode das, met een aktetas in de hand, als mascotte voor Duco.</desc>
+<ellipse cx="340" cy="580" rx="150" ry="24" fill="#000000" opacity="0.08"/>
+<path d="M 240 560 L 250 460 Q 250 430 280 430 L 400 430 Q 430 430 430 460 L 440 560 Z" fill="#7A5233"/>
+<ellipse cx="255" cy="565" rx="26" ry="14" fill="#2B3A55"/>
+<ellipse cx="425" cy="565" rx="26" ry="14" fill="#2B3A55"/>
+<path d="M 260 330 Q 260 260 340 260 Q 420 260 420 330 L 430 470 Q 430 500 400 500 L 280 500 Q 250 500 250 470 Z" fill="#8B5E3C"/>
+<path d="M 300 340 Q 300 300 340 300 Q 380 300 380 340 L 385 470 Q 385 490 365 490 L 315 490 Q 295 490 295 470 Z" fill="#E8D5B5"/>
+<path d="M 260 330 Q 260 275 340 268 L 340 500 L 280 500 Q 250 500 250 470 Z" fill="#1F2A44"/>
+<path d="M 420 330 Q 420 275 340 268 L 340 500 L 400 500 Q 430 500 430 470 Z" fill="#28365A"/>
+<path d="M 340 300 L 315 340 L 340 380 L 365 340 Z" fill="#C23B3B"/>
+<path d="M 315 340 L 330 355 L 340 380 L 350 355 L 365 340 L 340 320 Z" fill="#A32E2E"/>
+<path d="M 310 300 L 340 330 L 340 268 Z" fill="#F4EFE6"/>
+<path d="M 370 300 L 340 330 L 340 268 Z" fill="#FBF8F2"/>
+<path d="M 300 275 L 250 300 L 265 330 L 310 302 Z" fill="#1F2A44"/>
+<path d="M 380 275 L 430 300 L 415 330 L 370 302 Z" fill="#28365A"/>
+<ellipse cx="185" cy="410" rx="34" ry="42" fill="#8B5E3C" transform="rotate(-18 185 410)"/>
+<ellipse cx="175" cy="440" rx="24" ry="20" fill="#8B5E3C"/>
+<rect x="130" y="440" width="70" height="90" rx="6" fill="#3B2A1E"/>
+<rect x="130" y="440" width="70" height="14" rx="4" fill="#5A4230"/>
+<path d="M 152 440 L 152 424 Q 152 414 165 414 Q 178 414 178 424 L 178 440" fill="none" stroke="#3B2A1E" stroke-width="7"/>
+<ellipse cx="495" cy="410" rx="34" ry="42" fill="#8B5E3C" transform="rotate(18 495 410)"/>
+<ellipse cx="505" cy="440" rx="24" ry="20" fill="#8B5E3C"/>
+<circle cx="290" cy="150" r="34" fill="#8B5E3C"/>
+<circle cx="390" cy="150" r="34" fill="#8B5E3C"/>
+<circle cx="290" cy="152" r="18" fill="#C79B72"/>
+<circle cx="390" cy="152" r="18" fill="#C79B72"/>
+<ellipse cx="340" cy="215" rx="105" ry="95" fill="#8B5E3C"/>
+<path d="M 260 250 Q 260 320 340 320 Q 420 320 420 250 Q 420 300 340 300 Q 260 300 260 250 Z" fill="#E8D5B5"/>
+<circle cx="300" cy="205" r="12" fill="#241A12"/>
+<circle cx="380" cy="205" r="12" fill="#241A12"/>
+<circle cx="296" cy="200" r="4" fill="#FFFFFF"/>
+<circle cx="376" cy="200" r="4" fill="#FFFFFF"/>
+<ellipse cx="340" cy="245" rx="14" ry="10" fill="#241A12"/>
+<path d="M 340 252 Q 335 262 328 260" fill="none" stroke="#5A4230" stroke-width="3" stroke-linecap="round"/>
+<path d="M 340 252 Q 345 262 352 260" fill="none" stroke="#5A4230" stroke-width="3" stroke-linecap="round"/>
+<line x1="230" y1="240" x2="160" y2="228" stroke="#5A4230" stroke-width="2"/>
+<line x1="230" y1="252" x2="158" y2="252" stroke="#5A4230" stroke-width="2"/>
+<line x1="230" y1="264" x2="160" y2="276" stroke="#5A4230" stroke-width="2"/>
+<line x1="450" y1="240" x2="520" y2="228" stroke="#5A4230" stroke-width="2"/>
+<line x1="450" y1="252" x2="522" y2="252" stroke="#5A4230" stroke-width="2"/>
+<line x1="450" y1="264" x2="520" y2="276" stroke="#5A4230" stroke-width="2"/>
+</svg>
