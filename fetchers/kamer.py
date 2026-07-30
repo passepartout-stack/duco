@@ -10,10 +10,9 @@ nummer verhoogd worden (bv. naar "57") -- dekamer.be wijzigt dan zelf de URL.
 
 import re
 
-import requests
 from bs4 import BeautifulSoup
 
-from common import matched_keywords, passes_filter, make_item
+from common import matched_keywords, passes_filter, make_item, fetch_url
 
 LEGISLATUUR = "56"
 LIST_URL = f"https://www.dekamer.be/flwb/html/{LEGISLATUUR}/N/lastdocument_4.html"
@@ -37,8 +36,7 @@ def doc_url(doc_nr, volgnr):
 
 
 def fetch(known_ids, keywords):
-    r = requests.get(LIST_URL, timeout=30, headers=HEADERS)
-    r.raise_for_status()
+    r = fetch_url(LIST_URL, headers=HEADERS)
 
     if "Request Rejected" in r.text or "requested URL was rejected" in r.text:
         raise RuntimeError(
