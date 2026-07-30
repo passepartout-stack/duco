@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duco — Politiek dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2130;
+    --paper:#f5f2ea;
+    --line:#d8d0ba;
+    --bronze:#a3702f;
+    --pine:#33513f;
+    --muted:#6b6455;
+    --card:#fffdf8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .masthead{
+    border-bottom:2px solid var(--ink);
+    padding:24px clamp(16px,5vw,56px) 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .masthead-text .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--bronze);
+  }
+  .masthead-text h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,42px);
+    margin:4px 0 0;
+    letter-spacing:-0.01em;
+  }
+  .masthead-text .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+  .mascotte{
+    width:88px;
+    height:auto;
+    flex-shrink:0;
+  }
+  .toolbar{
+    max-width:960px;
+    margin:26px auto 0;
+    padding:0 clamp(16px,5vw,0px);
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .toolbar input{
+    flex:1;
+    min-width:220px;
+    padding:11px 14px;
+    border:1.5px solid var(--ink);
+    background:var(--card);
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:14px;
+    border-radius:2px;
+  }
+  .toolbar input:focus{outline:2px solid var(--bronze); outline-offset:1px;}
+  .count-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    align-self:center;
+    white-space:nowrap;
+  }
+  main{
+    max-width:960px;
+    margin:0 auto;
+    padding:26px clamp(16px,5vw,0px) 80px;
+  }
+  .chapter{
+    margin-bottom:44px;
+  }
+  .chapter-title{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:22px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:8px;
+    margin-bottom:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .chapter-title .chapter-count{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:400;
+    color:var(--muted);
+  }
+  .item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:3px solid var(--bronze);
+    padding:16px 18px;
+    margin-bottom:10px;
+    border-radius:2px;
+  }
+  .item-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+    margin-bottom:8px;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    padding:2px 8px;
+    border-radius:3px;
+    border:1px solid currentColor;
+  }
+  .tag-doctype{ color:var(--pine); }
+  .tag-date{ color:var(--muted); border-style:dashed; }
+  .item h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:17px;
+    margin:0 0 8px;
+    line-height:1.35;
+  }
+  .item h3 a{color:var(--ink); text-decoration:none;}
+  .item h3 a:hover{color:var(--bronze);}
+  .item p{
+    margin:0 0 10px;
+    font-size:14px;
+    line-height:1.55;
+    color:#3a3a34;
+  }
+  .keyword-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    align-items:center;
+  }
+  .keyword-row .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+  }
+  .kw-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    background:#eee3c8;
+    color:#5c4413;
+    padding:2px 7px;
+    border-radius:10px;
+  }
+  .empty-state, .empty-chapter{
+    text-align:center;
+    padding:30px 20px;
+    color:var(--muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  footer{
+    max-width:960px;
+    margin:0 auto;
+    padding:20px clamp(16px,5vw,0px) 50px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-text">
+    <div class="kicker">Automatisch dossier &middot; 4 bronnen</div>
+    <h1>Duco</h1>
+    <div class="meta" id="lastChecked">laatst gecontroleerd: —</div>
+  </div>
+  <img class="mascotte" src="assets/otter.svg" alt="Duco-mascotte: een otter in maatpak">
+</div>
+
+<div class="toolbar">
+  <input type="text" id="searchBox" placeholder="Zoek op woord, minister, thema…">
+  <span class="count-pill" id="countPill"></span>
+</div>
+
+<main id="chapters"></main>
+
+<footer>
+  Bronnen: news.belgium.be (federale ministerraad) &middot; Themis open data (Vlaamse regering) &middot;
+  dekamer.be/flwb (federaal parlement) &middot; ws.vlpar.be (Vlaams Parlement) &middot; ververst dagelijks
+</footer>
+
+<script>
+  const CHAPTER_ORDER = ["federale_ministerraad", "vlaamse_regering", "kamer", "vlaams_parlement"];
+  const CHAPTER_LABELS = {
+    federale_ministerraad: "Federale ministerraad",
+    vlaamse_regering: "Vlaamse regering",
+    kamer: "Federaal parlement (Kamer)",
+    vlaams_parlement: "Vlaams Parlement",
+  };
+
+  let allItems = [];
+
+  async function load() {
+    try {
+      const res = await fetch('data/items.json?_=' + Date.now());
+      const data = await res.json();
+      allItems = data.items || [];
+
+      const stateRes = await fetch('data/state.json?_=' + Date.now());
+      const state = await stateRes.json();
+      if (state.last_checked) {
+        const d = new Date(state.last_checked);
+        document.getElementById('lastChecked').textContent =
+          'laatst gecontroleerd: ' + d.toLocaleDateString('nl-BE', {day:'2-digit',month:'short',year:'numeric'}) +
+          ' ' + d.toLocaleTimeString('nl-BE', {hour:'2-digit',minute:'2-digit'});
+      }
+    } catch (e) {
+      document.getElementById('chapters').innerHTML =
+        '<div class="empty-state">Nog geen data beschikbaar. Het eerste automatische bezoek moet nog gebeuren.</div>';
+      return;
+    }
+    render('');
+  }
+
+  function render(query) {
+    const q = query.trim().toLowerCase();
+    const container = document.getElementById('chapters');
+    container.innerHTML = '';
+    let totalShown = 0;
+
+    CHAPTER_ORDER.forEach(source => {
+      const sourceItems = allItems
+        .filter(it => it.source === source)
+        .filter(it => !q || (it.title + ' ' + (it.summary || '')).toLowerCase().includes(q))
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+      const chapter = document.createElement('div');
+      chapter.className = 'chapter';
+
+      let inner = `<div class="chapter-title"><span>${CHAPTER_LABELS[source]}</span><span class="chapter-count">${sourceItems.length} item${sourceItems.length === 1 ? '' : 's'}</span></div>`;
+
+      if (sourceItems.length === 0) {
+        inner += '<div class="empty-chapter">Nog geen items voor dit hoofdstuk.</div>';
+      } else {
+        sourceItems.forEach(it => {
+          totalShown++;
+          const dateLabel = it.date
+            ? new Date(it.date).toLocaleDateString('nl-BE', {day:'2-digit', month:'long', year:'numeric'})
+            : '(datum onbekend)';
+          const kws = it.matched_keywords || [];
+          const kwHtml = kws.length
+            ? `<div class="keyword-row"><span class="label">gematchte trefwoorden:</span>${kws.map(k => `<span class="kw-chip">${escapeHtml(k)}</span>`).join('')}</div>`
+            : `<div class="keyword-row"><span class="label">geen filter ingesteld — alles getoond</span></div>`;
+
+          inner += `
+            <div class="item">
+              <div class="item-meta">
+                <span class="tag tag-doctype">${escapeHtml(it.doc_type || 'onbekend type')}</span>
+                <span class="tag tag-date">${dateLabel}</span>
+              </div>
+              <h3><a href="${it.url}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a></h3>
+              ${it.summary ? `<p>${escapeHtml(it.summary)}</p>` : ''}
+              ${kwHtml}
+            </div>`;
+        });
+      }
+
+      chapter.innerHTML = inner;
+      container.appendChild(chapter);
+    });
+
+    document.getElementById('countPill').textContent = totalShown + ' getoonde item' + (totalShown === 1 ? '' : 's');
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  document.getElementById('searchBox').addEventListener('input', e => render(e.target.value));
+  load();
+</script>
+
+</body>
+</html>
