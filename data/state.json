@@ -88,5 +88,5 @@
     "federale_ministerraad": "HTTPError: 403 Client Error: Forbidden for url: https://news.belgium.be/nl/ministerraad",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-07-30T07:42:42.290561+00:00"
+  "last_checked": "2026-07-30T08:03:07.756983+00:00"
 }
