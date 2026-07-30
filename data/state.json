@@ -1,10 +1,13 @@
 {
-     "known_ids": {
-       "federale_ministerraad": [],
-       "vlaamse_regering": [],
-       "kamer": [],
-       "vlaams_parlement": []
-     },
-     "errors": {},
-     "last_checked": null
-   }
+  "known_ids": {
+    "federale_ministerraad": [],
+    "vlaamse_regering": [],
+    "kamer": [],
+    "vlaams_parlement": []
+  },
+  "errors": {
+    "federale_ministerraad": "HTTPError: 403 Client Error: Forbidden for url: https://news.belgium.be/nl/ministerraad",
+    "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
+  },
+  "last_checked": "2026-07-30T12:14:16.774108+00:00"
+}
