@@ -1,27 +1,40 @@
-"""Fetcher voor het Vlaams Parlement via de officiele zoek-webservice (ws.vlpar.be).
+"""Fetcher voor het Vlaams Parlement via de officiele open-data API (ws.vlpar.be).
 
 LET OP - eerlijke inschatting van de betrouwbaarheid van dit bestand:
-De basis-aanroep (collection, sort, max, requiredfields) staat letterlijk
-gedocumenteerd onderaan https://www.vlaamsparlement.be/nl/parlementaire-documenten.
-De EXACTE veldnaam waarmee je filtert op documentsoort (bv. 'Amendement',
-'Voorstel of ontwerp van decreet') kon ik niet bevestigen: de swagger-pagina
-(ws.vlpar.be/api/swagger) is zelf een JavaScript-app die ik niet kon
-doorzoeken. Dit script haalt daarom een brede set recente documenten op en
-filtert de documentsoort CLIENT-SIDE in Python, door alle tekstvelden van elk
-resultaat te doorzoeken op een van de gewenste documentsoort-namen. Dat werkt,
-maar is minder efficient dan een servery-side filter.
+De eerdere versie gebruikte het pad 'api/search/query', wat een bevestigde
+404 opleverde. Het juiste basis-pad is 'e/opendata/api' (bevestigd via de
+publieke documentatie van het flempar R-pakket, dat dezelfde API gebruikt --
+zie www.flempar.be). De EXACTE naam van de resource voor wetgevend werk
+(decreten, amendementen, resoluties) binnen dat pad kon ik echter niet
+bevestigen zonder de swagger-pagina zelf te kunnen doorzoeken (die is een
+JavaScript-app).
 
-Actie vereist na de eerste live run: bekijk de ruwe JSON-respons (bv. via
-https://ws.vlpar.be/api/swagger/#!/search/getSearchResult in een browser) en
-laat het gericht weten als er een directe filterparameter bestaat -- dan
-vervang ik de client-side filtering door een efficiëntere server-side query.
+Daarom probeert dit script een reeks aannemelijke resource-paden na elkaar
+(zie CANDIDATE_PATHS) en gebruikt het eerste dat een geldig JSON-antwoord
+teruggeeft. Werkt geen enkele? Dan faalt enkel dit hoofdstuk (de andere 3
+blijven werken) en meldt state.json welk pad als laatste geprobeerd werd.
+
+Actie vereist na de eerste live run: bekijk data/state.json. Bevat het een
+fout voor 'vlaams_parlement'? Open dan zelf https://ws.vlpar.be/e/opendata/swagger-ui/index.html
+in een browser, zoek de juiste resource-naam voor parlementaire initiatieven,
+en stuur me die door -- dan vervang ik de kandidatenlijst door de bevestigde,
+directe aanroep.
 """
 
 import requests
 
 from common import matched_keywords, passes_filter, make_item
 
-SEARCH_URL = "https://ws.vlpar.be/api/search/query/"
+API_BASE = "https://ws.vlpar.be/e/opendata"
+
+# Aannemelijke resource-namen, in volgorde van waarschijnlijkheid.
+CANDIDATE_PATHS = [
+    "parlementaire-initiatieven",
+    "parlementaireinitiatieven",
+    "parlementair-initiatief",
+    "feiten",
+    "activiteiten",
+]
 
 TARGET_DOC_TYPES = [
     "Voorstel of ontwerp van decreet",
@@ -57,20 +70,29 @@ def _extract(result, *candidate_keys):
     return None
 
 
-def fetch(known_ids, keywords):
-    params = {
-        "collection": "vp_collection",
-        "sort": "date",
-        "max": 100,
-        "requiredfields": "paginatype:Parlementair document",
-    }
-    r = requests.get(SEARCH_URL, params=params, timeout=30)
-    r.raise_for_status()
-    data = r.json()
+def _try_fetch_results():
+    """Probeert elk kandidaat-pad, geeft (pad, lijst_resultaten) van de eerste die werkt."""
+    last_error = None
+    for path in CANDIDATE_PATHS:
+        url = f"{API_BASE}/{path}"
+        try:
+            r = requests.get(url, params={"max": 100}, timeout=20)
+            if r.status_code != 200:
+                last_error = f"{path} -> HTTP {r.status_code}"
+                continue
+            data = r.json()
+            results = data if isinstance(data, list) else data.get("items") or data.get("results") or []
+            if results:
+                return path, results
+            last_error = f"{path} -> 200 OK maar lege/onherkenbare data"
+        except Exception as e:
+            last_error = f"{path} -> {type(e).__name__}: {e}"
+            continue
+    raise RuntimeError(f"Geen enkel kandidaat-pad werkte. Laatste poging: {last_error}")
 
-    results = data.get("results") or data.get("items") or data if isinstance(data, list) else []
-    if isinstance(data, dict) and not results:
-        results = data.get("documents", [])
+
+def fetch(known_ids, keywords):
+    _, results = _try_fetch_results()
 
     items = []
     for result in results:
@@ -80,7 +102,7 @@ def fetch(known_ids, keywords):
 
         uid = _extract(result, "id", "documentId", "nid") or _extract(result, "url", "link")
         title = _extract(result, "title", "titel", "name") or "(geen titel)"
-        date = _extract(result, "date", "datum", "publicationDate")
+        date = _extract(result, "date", "datum", "publicatiedatum", "publicationDate")
         url = _extract(result, "url", "link", "documentUrl") or ""
 
         if not uid or uid in known_ids:
