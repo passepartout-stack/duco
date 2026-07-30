@@ -17,7 +17,13 @@ from common import matched_keywords, passes_filter, make_item
 
 LEGISLATUUR = "56"
 LIST_URL = f"https://www.dekamer.be/flwb/html/{LEGISLATUUR}/N/lastdocument_4.html"
-HEADERS = {"User-Agent": "Mozilla/5.0 (RubenDucoTracker/1.0; +https://www.rubend.be)"}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "nl-BE,nl;q=0.9,en;q=0.8",
+    "Referer": "https://www.dekamer.be/kvvcr/index.cfm",
+}
 
 INCLUDED_TYPES = {"WETSONTWERP", "WETSVOORSTEL", "AMENDEMENT"}
 
@@ -33,6 +39,13 @@ def doc_url(doc_nr, volgnr):
 def fetch(known_ids, keywords):
     r = requests.get(LIST_URL, timeout=30, headers=HEADERS)
     r.raise_for_status()
+
+    if "Request Rejected" in r.text or "requested URL was rejected" in r.text:
+        raise RuntimeError(
+            "dekamer.be blokkeerde deze aanvraag (anti-bot 'Request Rejected'-pagina). "
+            "Geen inhoudelijke fout in het script -- de site weert dit verzoek af."
+        )
+
     soup = BeautifulSoup(r.text, "html.parser")
 
     items = []
