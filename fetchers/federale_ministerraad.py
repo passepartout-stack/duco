@@ -2,10 +2,9 @@
 
 import re
 
-import requests
 from bs4 import BeautifulSoup
 
-from common import matched_keywords, passes_filter, make_item
+from common import matched_keywords, passes_filter, make_item, fetch_url
 
 BASE = "https://news.belgium.be"
 LIST_URL = f"{BASE}/nl/ministerraad"
@@ -45,8 +44,7 @@ def parse_dutch_date(url):
 
 
 def get_session_links():
-    r = requests.get(LIST_URL, timeout=30, headers=HEADERS)
-    r.raise_for_status()
+    r = fetch_url(LIST_URL, headers=HEADERS)
     soup = BeautifulSoup(r.text, "html.parser")
     links, seen = [], set()
     for a in soup.find_all("a", href=True):
@@ -60,8 +58,7 @@ def get_session_links():
 
 
 def get_decisions(session_url):
-    r = requests.get(session_url, timeout=30, headers=HEADERS)
-    r.raise_for_status()
+    r = fetch_url(session_url, headers=HEADERS)
     soup = BeautifulSoup(r.text, "html.parser")
     main = soup.find("main") or soup
 
