@@ -169,6 +169,21 @@
     padding:2px 7px;
     border-radius:10px;
   }
+  .load-more{
+    display:block;
+    margin:14px auto 0;
+    padding:9px 20px;
+    background:var(--card);
+    border:1.5px solid var(--ink);
+    border-radius:3px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    cursor:pointer;
+    color:var(--ink);
+  }
+  .load-more:hover{ background:var(--ink); color:var(--paper); }
   .empty-state, .empty-chapter{
     text-align:center;
     padding:30px 20px;
@@ -195,7 +210,7 @@
     <h1>Duco</h1>
     <div class="meta" id="lastChecked">laatst gecontroleerd: —</div>
   </div>
-  <img class="mascotte" src="duco_nieuw.png" alt="Duco-mascotte">
+  <img class="mascotte" src="assets/otter.svg" alt="Duco-mascotte: een otter in maatpak">
 </div>
 
 <div class="toolbar">
@@ -219,7 +234,10 @@
     vlaams_parlement: "Vlaams Parlement",
   };
 
+  const PAGE_SIZE = 10;
   let allItems = [];
+  let expandedChapters = new Set();
+  let currentQuery = '';
 
   async function load() {
     try {
@@ -244,6 +262,7 @@
   }
 
   function render(query) {
+    currentQuery = query;
     const q = query.trim().toLowerCase();
     const container = document.getElementById('chapters');
     container.innerHTML = '';
@@ -255,6 +274,10 @@
         .filter(it => !q || (it.title + ' ' + (it.summary || '')).toLowerCase().includes(q))
         .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
+      const isExpanded = expandedChapters.has(source);
+      const visibleItems = isExpanded ? sourceItems : sourceItems.slice(0, PAGE_SIZE);
+      const remaining = sourceItems.length - visibleItems.length;
+
       const chapter = document.createElement('div');
       chapter.className = 'chapter';
 
@@ -263,7 +286,7 @@
       if (sourceItems.length === 0) {
         inner += '<div class="empty-chapter">Nog geen items voor dit hoofdstuk.</div>';
       } else {
-        sourceItems.forEach(it => {
+        visibleItems.forEach(it => {
           totalShown++;
           const dateLabel = it.date
             ? new Date(it.date).toLocaleDateString('nl-BE', {day:'2-digit', month:'long', year:'numeric'})
@@ -284,10 +307,28 @@
               ${kwHtml}
             </div>`;
         });
+
+        if (remaining > 0) {
+          inner += `<button class="load-more" data-source="${source}" data-action="more">Toon ${remaining} meer &rarr;</button>`;
+        } else if (isExpanded && sourceItems.length > PAGE_SIZE) {
+          inner += `<button class="load-more" data-source="${source}" data-action="less">Toon minder</button>`;
+        }
       }
 
       chapter.innerHTML = inner;
       container.appendChild(chapter);
+    });
+
+    container.querySelectorAll('.load-more').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-source');
+        if (btn.getAttribute('data-action') === 'more') {
+          expandedChapters.add(src);
+        } else {
+          expandedChapters.delete(src);
+        }
+        render(currentQuery);
+      });
     });
 
     document.getElementById('countPill').textContent = totalShown + ' getoonde item' + (totalShown === 1 ? '' : 's');
