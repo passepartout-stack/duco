@@ -43,6 +43,7 @@
       "https://news.belgium.be/nl/ministerraad-van-30-april-2026",
       "https://news.belgium.be/nl/ministerraad-van-30-januari-2026",
       "https://news.belgium.be/nl/ministerraad-van-4-juli-2025",
+      "https://news.belgium.be/nl/ministerraad-van-4-september-2026",
       "https://news.belgium.be/nl/ministerraad-van-5-december-2025",
       "https://news.belgium.be/nl/ministerraad-van-5-juni-2026",
       "https://news.belgium.be/nl/ministerraad-van-5-september-2025",
@@ -152,5 +153,5 @@
     "kamer": "RuntimeError: dekamer.be blokkeerde deze aanvraag (anti-bot 'Request Rejected'-pagina). Geen inhoudelijke fout in het script -- de site weert dit verzoek af.",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-09-03T10:58:46.699503+00:00"
+  "last_checked": "2026-09-04T10:59:20.594668+00:00"
 }
