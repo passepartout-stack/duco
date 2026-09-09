@@ -159,5 +159,5 @@
     "kamer": "RuntimeError: dekamer.be blokkeerde deze aanvraag (anti-bot 'Request Rejected'-pagina). Geen inhoudelijke fout in het script -- de site weert dit verzoek af.",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-09-08T10:59:02.654374+00:00"
+  "last_checked": "2026-09-09T11:03:34.444609+00:00"
 }
