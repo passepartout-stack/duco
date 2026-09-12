@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "source": "kamer",
+      "source_label": "Federaal parlement (Kamer)",
+      "doc_type": "WETSVOORSTEL",
+      "date": "2026-09-08",
+      "title": "DOC 56 1732/001 - Wetsvoorstel tot wijziging van de wet van 27 februari 1987 betreffende de tegemoetkomingen aan personen met een handicap, teneinde werkhervatting veilig te stellen voor gerechtigden van een inkomensvervangende tegemoetkoming.",
+      "summary": "",
+      "url": "https://www.dekamer.be/FLWB/pdf/56/1732/56K1732001.pdf",
+      "matched_keywords": [
+        "inkomensvervangende tegemoetkoming"
+      ]
+    },
+    {
+      "source": "federale_ministerraad",
+      "source_label": "Federale ministerraad",
+      "doc_type": "Beslissing",
+      "date": "2026-09-11",
+      "title": "Wijzigingsclausule overeenkomst tussen de opticiens en de verzekeringsinstellingenDe ministerraad keurt op voorstel van minister van Sociale Zaken Frank Vandenbroucke de tweede wijzigingsclausule bij de nationale overeenkomst tussen de opticiens en de verzekeringsinstellingen goed.",
+      "summary": "Wijzigingsclausule overeenkomst tussen de opticiens en de verzekeringsinstellingen De ministerraad keurt op voorstel van minister van Sociale Zaken Frank Vandenbroucke de tweede wijzigingsclausule bij de nationale overeenkomst tussen de opticiens en de verzekeringsinstellingen goed. Vastlegging wettelijk kader voor de directe toegang tot kinesitherapie De ministerraad keurt op voorstel van minister van Volksgezondheid Frank Vandenbroucke een ontwerp van koninklijk besluit goed dat een wettelijk kader vastlegt voor de toegang tot kinesitherapie zonder voorschrift.",
+      "url": "https://news.belgium.be/nl/wijzigingsclausule-overeenkomst-tussen-de-opticiens-en-de-verzekeringsinstellingen",
+      "matched_keywords": [
+        "verzekering"
+      ]
+    },
+    {
+      "source": "federale_ministerraad",
+      "source_label": "Federale ministerraad",
+      "doc_type": "Beslissing",
+      "date": "2026-09-11",
+      "title": "Vastlegging wettelijk kader voor de directe toegang tot kinesitherapieDe ministerraad keurt op voorstel van minister van Volksgezondheid Frank Vandenbroucke een ontwerp van koninklijk besluit goed dat een wettelijk kader vastlegt voor de toegang tot kinesitherapie zonder voorschrift.",
+      "summary": "Wijzigingsclausule overeenkomst tussen de opticiens en de verzekeringsinstellingen De ministerraad keurt op voorstel van minister van Sociale Zaken Frank Vandenbroucke de tweede wijzigingsclausule bij de nationale overeenkomst tussen de opticiens en de verzekeringsinstellingen goed. Vastlegging wettelijk kader voor de directe toegang tot kinesitherapie De ministerraad keurt op voorstel van minister van Volksgezondheid Frank Vandenbroucke een ontwerp van koninklijk besluit goed dat een wettelijk kader vastlegt voor de toegang tot kinesitherapie zonder voorschrift.",
+      "url": "https://news.belgium.be/nl/vastlegging-wettelijk-kader-voor-de-directe-toegang-tot-kinesitherapie",
+      "matched_keywords": [
+        "verzekering"
+      ]
+    },
+    {
       "source": "federale_ministerraad",
       "source_label": "Federale ministerraad",
       "doc_type": "Beslissing",
