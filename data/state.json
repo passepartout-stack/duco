@@ -154,6 +154,7 @@
       "1711/001",
       "1712/001",
       "1714/001",
+      "1715/001",
       "1716/001",
       "1718/001",
       "1719/001",
@@ -164,13 +165,14 @@
       "1728/001",
       "1729/001",
       "1732/001",
-      "1735/001"
+      "1735/001",
+      "1738/001",
+      "1742/001"
     ],
     "vlaams_parlement": []
   },
   "errors": {
-    "kamer": "HTTPError: 500 Server Error: Internal Server Error for url: https://api.scraperapi.com/?api_key=1e06bdf10ac834898985a5895f7a16dc&url=https%3A%2F%2Fwww.dekamer.be%2Fflwb%2Fhtml%2F56%2FN%2Flastdocument_4.html",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-09-14T12:22:57.928853+00:00"
+  "last_checked": "2026-09-15T11:28:12.480444+00:00"
 }
