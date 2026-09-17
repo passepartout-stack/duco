@@ -173,7 +173,8 @@
     "vlaams_parlement": []
   },
   "errors": {
+    "kamer": "HTTPError: 500 Server Error: Internal Server Error for url: https://api.scraperapi.com/?api_key=1e06bdf10ac834898985a5895f7a16dc&url=https%3A%2F%2Fwww.dekamer.be%2Fflwb%2Fhtml%2F56%2FN%2Flastdocument_4.html",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-09-16T11:14:16.419037+00:00"
+  "last_checked": "2026-09-17T11:23:10.013410+00:00"
 }
