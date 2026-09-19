@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "source": "federale_ministerraad",
+      "source_label": "Federale ministerraad",
+      "doc_type": "Beslissing",
+      "date": "2026-09-18",
+      "title": "Aanpassing van het aantal griffiers van de Raad voor VreemdelingenbetwistingenDe ministerraad keurt op voorstel van minister van Asiel en Migratie Anneleen Van Bossuyt een voorontwerp van wet goed tot wijziging van het aantal griffiers van de Raad voor Vreemdelingenbetwistingen.",
+      "summary": "Aanpassing van het aantal griffiers van de Raad voor Vreemdelingenbetwistingen De ministerraad keurt op voorstel van minister van Asiel en Migratie Anneleen Van Bossuyt een voorontwerp van wet goed tot wijziging van het aantal griffiers van de Raad voor Vreemdelingenbetwistingen. Instemming met het Akkoord tot wijziging van het OCCAR-veiligheidsakkoord De ministerraad keurt op voorstel van minister van Buitenlandse Zaken Maxime Prévot een voorontwerp van wet goed betreffende de instemming met het Akkoord tot wijziging van het OCCAR-veiligheidsakkoord (Gezamenlijke Organisatie voor Samenwerking op Defensiematerieelgebied of Organisation Conjointe de Coopération en matière d'Armement in het Frans).",
+      "url": "https://news.belgium.be/nl/aanpassing-van-het-aantal-griffiers-van-de-raad-voor-vreemdelingenbetwistingen",
+      "matched_keywords": [
+        "EMA"
+      ]
+    },
+    {
+      "source": "federale_ministerraad",
+      "source_label": "Federale ministerraad",
+      "doc_type": "Beslissing",
+      "date": "2026-09-18",
+      "title": "Instemming met het Akkoord tot wijziging van het OCCAR-veiligheidsakkoordDe ministerraad keurt op voorstel van minister van Buitenlandse Zaken Maxime Prévot een voorontwerp van wet goed betreffende de instemming met het Akkoord tot wijziging van het OCCAR-veiligheidsakkoord (Gezamenlijke Organisatie voor Samenwerking op Defensiematerieelgebied ofOrganisation Conjointe de Coopération en matière d'Armementin het Frans).",
+      "summary": "Aanpassing van het aantal griffiers van de Raad voor Vreemdelingenbetwistingen De ministerraad keurt op voorstel van minister van Asiel en Migratie Anneleen Van Bossuyt een voorontwerp van wet goed tot wijziging van het aantal griffiers van de Raad voor Vreemdelingenbetwistingen. Instemming met het Akkoord tot wijziging van het OCCAR-veiligheidsakkoord De ministerraad keurt op voorstel van minister van Buitenlandse Zaken Maxime Prévot een voorontwerp van wet goed betreffende de instemming met het Akkoord tot wijziging van het OCCAR-veiligheidsakkoord (Gezamenlijke Organisatie voor Samenwerking op Defensiematerieelgebied of Organisation Conjointe de Coopération en matière d'Armement in het Frans).",
+      "url": "https://news.belgium.be/nl/instemming-met-het-akkoord-tot-wijziging-van-het-occar-veiligheidsakkoord",
+      "matched_keywords": [
+        "EMA"
+      ]
+    },
+    {
       "source": "kamer",
       "source_label": "Federaal parlement (Kamer)",
       "doc_type": "WETSONTWERP",
