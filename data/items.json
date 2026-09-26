@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "source": "kamer",
+      "source_label": "Federaal parlement (Kamer)",
+      "doc_type": "WETSONTWERP",
+      "date": "2026-09-23",
+      "title": "DOC 56 1757/001 - Wetsontwerp houdende instemming met de Overeenkomst tussen de Regering van het Koninkrijk Belgi� en de Regering van de Democratische Volksrepubliek Algerije inzake de wederzijdse vrijstelling van de visumplicht voor houders van geldige diplomatieke en dienstpaspoorten, gedaan te Brussel op 31 maart 2026.",
+      "summary": "",
+      "url": "https://www.dekamer.be/FLWB/pdf/56/1757/56K1757001.pdf",
+      "matched_keywords": [
+        "MOC"
+      ]
+    },
+    {
+      "source": "kamer",
+      "source_label": "Federaal parlement (Kamer)",
+      "doc_type": "WETSVOORSTEL",
+      "date": "2026-09-22",
+      "title": "DOC 56 1758/001 - Wetsvoorstel tot wijziging van de geco�rdineerde wet van 14 juli 1994 betreffende de verplichte verzekering voor geneeskundige verzorging en uitkeringen met het oog op de invoering van een Commissie voor de Heroverweging van de beslissingen van de adviserend-arts betreffende de afhankelijkheidsgraad in de thuisverpleging.",
+      "summary": "",
+      "url": "https://www.dekamer.be/FLWB/pdf/56/1758/56K1758001.pdf",
+      "matched_keywords": [
+        "verzekering"
+      ]
+    },
+    {
+      "source": "kamer",
+      "source_label": "Federaal parlement (Kamer)",
+      "doc_type": "AMENDEMENT",
+      "date": "2026-09-22",
+      "title": "DOC 56 0560/002 - Wetsvoorstel tot wijziging van de wet van 3 juli 1978 betreffende de arbeidsovereenkomsten en tot wijziging van de codex over het welzijn op het werk met het oog op de versterking van het verzuimbeleid bij werkgevers.",
+      "summary": "",
+      "url": "https://www.dekamer.be/FLWB/pdf/56/0560/56K0560002.pdf",
+      "matched_keywords": [
+        "welzijn op het werk"
+      ]
+    },
+    {
       "source": "federale_ministerraad",
       "source_label": "Federale ministerraad",
       "doc_type": "Beslissing",
