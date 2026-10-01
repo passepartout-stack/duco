@@ -80,6 +80,7 @@
       "1211/004",
       "1243/007",
       "1243/010",
+      "1295/002",
       "1302/002",
       "1322/003",
       "1338/004",
@@ -102,6 +103,8 @@
       "1590/005",
       "1590/008",
       "1591/002",
+      "1591/007",
+      "1591/008",
       "1593/002",
       "1593/005",
       "1597/002",
@@ -160,6 +163,7 @@
       "1695/001",
       "1696/001",
       "1698/001",
+      "1698/002",
       "1700/001",
       "1701/001",
       "1702/001",
@@ -201,13 +205,15 @@
       "1757/001",
       "1758/001",
       "1759/001",
-      "1762/001"
+      "1761/001",
+      "1762/001",
+      "1767/001",
+      "1768/001"
     ],
     "vlaams_parlement": []
   },
   "errors": {
-    "kamer": "RuntimeError: dekamer.be blokkeerde deze aanvraag (anti-bot 'Request Rejected'-pagina). Geen inhoudelijke fout in het script -- de site weert dit verzoek af.",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-09-29T12:30:48.359467+00:00"
+  "last_checked": "2026-10-01T12:50:57.163967+00:00"
 }
