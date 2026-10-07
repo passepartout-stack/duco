@@ -220,12 +220,16 @@
       "1767/001",
       "1768/001",
       "1778/001",
-      "1783/001"
+      "1783/001",
+      "1792/001",
+      "1794/001",
+      "1797/001",
+      "1798/001"
     ],
     "vlaams_parlement": []
   },
   "errors": {
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-10-06T13:06:59.203244+00:00"
+  "last_checked": "2026-10-07T13:01:44.317709+00:00"
 }
