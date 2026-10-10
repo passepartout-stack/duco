@@ -55,7 +55,8 @@
       "https://news.belgium.be/nl/ministerraad-van-6-juni-2025",
       "https://news.belgium.be/nl/ministerraad-van-6-maart-2026",
       "https://news.belgium.be/nl/ministerraad-van-7-november-2025",
-      "https://news.belgium.be/nl/ministerraad-van-9-januari-2026"
+      "https://news.belgium.be/nl/ministerraad-van-9-januari-2026",
+      "https://news.belgium.be/nl/ministerraad-van-9-oktober-2026"
     ],
     "vlaamse_regering": [],
     "kamer": [
@@ -242,5 +243,5 @@
   "errors": {
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-10-09T12:55:37.249610+00:00"
+  "last_checked": "2026-10-10T12:13:48.519897+00:00"
 }
