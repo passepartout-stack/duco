@@ -245,5 +245,5 @@
     "kamer": "HTTPError: 401 Client Error: Unauthorized for url: https://api.scraperapi.com/?api_key=1e06bdf10ac834898985a5895f7a16dc&url=https%3A%2F%2Fwww.dekamer.be%2Fflwb%2Fhtml%2F56%2FN%2Flastdocument_4.html",
     "vlaams_parlement": "RuntimeError: Geen enkel kandidaat-pad werkte. Laatste poging: activiteiten -> HTTP 404"
   },
-  "last_checked": "2026-10-16T11:05:27.297804+00:00"
+  "last_checked": "2026-10-17T10:24:53.655536+00:00"
 }
